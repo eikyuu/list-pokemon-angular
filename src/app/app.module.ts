@@ -6,6 +6,7 @@ import { PokemonsModule } from './pokemons/pokemon.module';
 import { AppComponent }  from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+
 @NgModule({
 	imports: [
 		BrowserModule,
@@ -14,7 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 	],
 	declarations: [
 		AppComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
 	],
 	bootstrap: [AppComponent]
 })
