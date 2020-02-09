@@ -5,6 +5,8 @@ import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
+import { PokemonsService } from './pokemons.service';
+// import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 @NgModule({
 	imports: [
@@ -14,8 +16,9 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 		ListPokemonComponent,
 		DetailPokemonComponent,
 		BorderCardDirective,
-		PokemonTypeColorPipe
+		PokemonTypeColorPipe,
+		// PokemonFormComponent
 	],
-	providers: []
+	providers: [PokemonsService]
 })
 export class PokemonsModule { }
