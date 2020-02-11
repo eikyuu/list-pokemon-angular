@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Pokemon } from '../Pokemon';
 import { PokemonsService } from '../pokemons.service';
-
 @Component({
 	selector: 'detail-pokemon',
 	templateUrl: './detail-pokemon.component.html',
@@ -24,5 +23,11 @@ export class DetailPokemonComponent implements OnInit {
 	goBack(): void {
 		this.router.navigate(['/pokemons']);
 	}
+
+	goEdit(pokemon:Pokemon): void {
+		let link = ['/pokemon/edit', pokemon.id];
+		this.router.navigate(link);
+	}
+
 
 }
