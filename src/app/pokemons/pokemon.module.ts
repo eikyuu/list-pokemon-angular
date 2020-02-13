@@ -9,7 +9,7 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { PokemonsService } from './pokemons.service';
 import { from } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-import { EditPokemonComponent } from './edit-pokemon.compoment';
+import { EditPokemonComponent } from './edit-pokemon.component';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 
