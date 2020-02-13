@@ -10,12 +10,12 @@ export class DetailPokemonComponent implements OnInit {
 
 	pokemon: Pokemon = null;
 
-	constructor(private route: ActivatedRoute, 
-				private router: Router, 
-				private pokemonsService: PokemonsService) {}
+	constructor(
+		private route: ActivatedRoute,
+		private router: Router,
+		private pokemonsService: PokemonsService) { }
 
 	ngOnInit(): void {
-
 		let id = +this.route.snapshot.paramMap.get('id');
 		this.pokemon = this.pokemonsService.getPokemon(id);
 	}
@@ -28,6 +28,5 @@ export class DetailPokemonComponent implements OnInit {
 		let link = ['/pokemon/edit', pokemon.id];
 		this.router.navigate(link);
 	}
-
 
 }
