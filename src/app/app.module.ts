@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { PokemonsModule } from './pokemons/pokemon.module';
-import { FormsModule } from '@angular/forms';
+
 import { AppComponent }  from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -14,7 +14,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 		BrowserModule,
 		PokemonsModule, // L'odre de chargement des modules est très important
 		AppRoutingModule, // pour l'ordre de déclaration des routes !
-		FormsModule
 	],
 	declarations: [
 		AppComponent,

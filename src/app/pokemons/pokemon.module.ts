@@ -7,9 +7,8 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { PokemonsService } from './pokemons.service';
-import { from } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-import { EditPokemonComponent } from './edit-pokemon.component';
+import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 
