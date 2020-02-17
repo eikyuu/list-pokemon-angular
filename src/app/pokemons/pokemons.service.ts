@@ -11,9 +11,9 @@ import { of } from 'rxjs';
 
 export class PokemonsService {
 
-  constructor(private http: HttpClient) {}
+private pokemonsUrl = 'api/pokemons';
 
-  private pokemonsUrl = 'api/pokemons';
+	constructor(private http: HttpClient) { }
 
   private log(log : string) {
     console.info(log);
@@ -29,26 +29,25 @@ export class PokemonsService {
   }
 
 // Retourne tous les pokemons
+getPokemons(): Observable<Pokemon[]> {
+  return this.http.get<Pokemon[]>(this.pokemonsUrl).pipe(
+    tap(_ => this.log(`fetched pokemons`)),
+    catchError(this.handleError('getPokemons', []))
+  );
+}
 
-  getPokemons() : Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(this.pokemonsUrl).pipe(
-      tap(_=> this.log(`fetched pokemons`)),
-      catchError(this.handleError(`getPokemons`, []))
-    );
-  }
+// Retourne le pokemon avec l'identifiant passe en parametre
 
-  // Retourne le pokemon avec l'identifiant passe en parametre
+getPokemon(id: number): Observable<Pokemon> {
+  const url = `${this.pokemonsUrl}/${id}`;
 
-  getPokemon(id : number): Observable<Pokemon> {
-    const url = `${this.pokemonsUrl}${id}`;
+  return this.http.get<Pokemon>(url).pipe(
+    tap(_ => this.log(`fetched pokemon id=${id}`)),
+    catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
+  );
+}
 
-    return this.http.get<Pokemon>(url).pipe(
-      tap(_ => this.log(`fetched pokemon id=${id}`)),
-      catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
-    )
-  }
-  
-  getPokemonTypes() : string[] {
-    return ['Plante', 'Feu', 'Eau', 'Insect', 'Normal', 'Electrik', 'Poison', 'Fée', 'Vol'];
-  }
+getPokemonTypes() : string[] {
+  return ['Plante', 'Feu', 'Eau', 'Insect', 'Normal', 'Electrik', 'Poison', 'Fée', 'Vol'];
+}
 }

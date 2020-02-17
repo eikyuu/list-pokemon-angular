@@ -19,7 +19,6 @@ export class DetailPokemonComponent implements OnInit {
 		let id = +this.route.snapshot.paramMap.get('id');
 		this.pokemonsService.getPokemon(id)
 			.subscribe(pokemon => this.pokemon = pokemon);
-
 	}
 
 	goBack(): void {
